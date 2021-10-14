@@ -1,0 +1,13 @@
+{
+    "gamesstatus": {
+        "URL": "https://fastcup.net/",
+        "EVENT_NAME": "statusgames"
+    },
+    "gameguard": {
+        "URL": "https://gameguard.ac/",
+        "EVENT_NAME": "gameguard"
+    }
+
+
+        
+}

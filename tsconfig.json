@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./lib",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "types": ["node"]
+  },
+  "include": [
+    "src",
+    "node_modules/@types/puppeteer/index.d.ts"
+  ],
+  "exclude": ["node_modules", "**/__tests__/*"]
+}
