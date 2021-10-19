@@ -1,5 +1,4 @@
 import express from 'express';
-import routes from './routes.json';
 
 const router = express.Router();
 
@@ -19,7 +18,7 @@ router.get('/default/statusgames', async (req, res) =>{
         browser.page().then( async (page: any) =>{
             
             await page.goto(
-                routes.gamesstatus.URL, {waitUntil: 'networkidle0'}
+                'https://fastcup.net/', {waitUntil: 'networkidle0'}
             )
 
             const data = await page.evaluate(async () => {
@@ -40,12 +39,12 @@ router.get('/default/statusgames', async (req, res) =>{
             // Close current tab
             await page.close();
             
-            return res.send(message(routes.gamesstatus.EVENT_NAME, data));
+            return res.send(message('gamestatus', data));
 
         })
 
     } catch (error: any) {
-        return res.status(500).send(message(routes.gamesstatus.EVENT_NAME, error.toString(), false));
+        return res.status(500).send(message('gamestatus', error.toString(), false));
     }
 });
 
@@ -58,7 +57,7 @@ router.get('/default/gameguard', async (req, res) =>{
         browser.page().then( async (page: any) =>{
             
             await page.goto(
-                routes.gameguard.URL, {waitUntil: 'networkidle0'}
+                'https://gameguard.ac/', {waitUntil: 'networkidle0'}
             )
 
             const data = await page.evaluate(async () => {
@@ -79,12 +78,12 @@ router.get('/default/gameguard', async (req, res) =>{
             // Close current tab
             await page.close();
             
-            return res.send(message(routes.gameguard.EVENT_NAME, data));
+            return res.send(message('gameguard', data));
 
         })
 
     } catch (error: any) {
-        return res.status(500).send(message(routes.gameguard.EVENT_NAME, error.toString(), false));
+        return res.status(500).send(message('gameguard', error.toString(), false));
     }
 });
 

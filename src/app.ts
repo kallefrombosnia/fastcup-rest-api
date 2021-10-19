@@ -4,6 +4,7 @@ import config from './config.json'
 
 
 import defaultRouter from './routes/default/router';
+import csRouter from './routes/cs/router';
 
 // Init app
 const app = express();
@@ -38,6 +39,8 @@ app.disable('x-powered-by')
 // Default router
 app.use('/api', defaultRouter);
 
+// CS 1.6 router
+app.use('/api', csRouter);
 
 // Start app and listen on web port
 app.listen(config.express_port, () =>{
