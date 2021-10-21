@@ -41,6 +41,7 @@ export class Browser{
                 const instance = await puppeteer.launch({
                     headless: this.headless, 
                     ignoreHTTPSErrors: true,
+                    args: ['--no-sandbox','--disable-setuid-sandbox']
                 });
 
                 const context = await instance.createIncognitoBrowserContext();
