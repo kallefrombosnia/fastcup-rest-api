@@ -3,6 +3,8 @@
 
 Hosted on Heroku!
 
+https://fastcup-rest.herokuapp.com/
+
 ## Idea
 Main reason of creating this project is that developers couldn't use graphql to query backend and use it for own purposes.  
 With this API wrapper you will be able to call standard querys which FASTCUP.net uses.
