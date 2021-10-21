@@ -7,7 +7,7 @@ import {Browser} from '../../wrapper/browser';
 import { message } from '../../helper/helper';
 import cache from '../../cache/cache';
 
-const browser = new Browser(false);
+const browser = new Browser();
 
 /**
  * 
@@ -45,8 +45,8 @@ router.get('/csgo/config', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('config', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('config', (error as Error).toString(), false));
     }
 });
 
@@ -84,8 +84,8 @@ router.get('/csgo/modes', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('modes', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('modes', (error as Error).toString(), false));
     }
 });
 
@@ -124,8 +124,8 @@ router.get('/csgo/statistic', cache(60),  async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('statistic', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('statistic', (error as Error).toString(), false));
     }
 });
 
@@ -163,8 +163,8 @@ router.get('/csgo/tournaments', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('tournaments', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('tournaments', (error as Error).toString(), false));
     }
 });
 
@@ -202,8 +202,8 @@ router.get('/csgo/regions', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('regions', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('regions', (error as Error).toString(), false));
     }
 });
 
@@ -241,8 +241,8 @@ router.get('/csgo/leagues', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('leagues', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('leagues', (error as Error).toString(), false));
     }
 });
 
@@ -280,8 +280,8 @@ router.get('/csgo/streamers', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('streamers', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('streamers', (error as Error).toString(), false));
     }
 });
 
@@ -319,8 +319,8 @@ router.get('/csgo/servers', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('servers', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('servers', (error as Error).toString(), false));
     }
 });
 
@@ -359,8 +359,8 @@ router.get('/csgo/ranks', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('ranks', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('ranks', (error as Error).toString(), false));
     }
 });
 
@@ -399,8 +399,8 @@ router.get('/csgo/ladder', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('ladder', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('ladder', (error as Error).toString(), false));
     }
 });
 
@@ -438,8 +438,8 @@ router.get('/csgo/matches', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('matches', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('matches', (error as Error).toString(), false));
     }
 });
 
@@ -498,8 +498,8 @@ router.get('/csgo/player/:type/:id/info', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('player_info', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('player_info', (error as Error).toString(), false));
     }
 });
 
@@ -542,8 +542,8 @@ router.get('/csgo/player/:id/:limit/nicknames', cache(3600), async (req, res) =>
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('nicknames', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('nicknames', (error as Error).toString(), false));
     }
 });
 
@@ -586,8 +586,8 @@ router.get('/cs/player/:id/:limit/feed', cache(3600), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('feed', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('feed', (error as Error).toString(), false));
     }
 });
 

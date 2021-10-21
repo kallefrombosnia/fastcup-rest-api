@@ -59,6 +59,6 @@ app.get('*', (req, res) =>{
 });
 
 // Start app and listen on web port
-app.listen(config.express_port, () =>{
-    console.log(`Web server started on port ${config.express_port}...`);
+const listener: any = app.listen(process.env.PORT || config.express_port || 3000, () =>{
+    console.log(`Web server started on port ${listener.address().port}...`);
 });

@@ -6,7 +6,7 @@ import {Browser} from '../../wrapper/browser';
 import { message } from '../../helper/helper';
 import cache from '../../cache/cache';
 
-const browser = new Browser(false);
+const browser = new Browser();
 
 /**
  * 
@@ -44,8 +44,8 @@ router.get('/default/statusgames', cache(60), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('gamestatus', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('gamestatus', (error as Error).toString(), false));
     }
 });
 
@@ -83,8 +83,8 @@ router.get('/default/gameguard', cache(60), async (req, res) =>{
 
         })
 
-    } catch (error: any) {
-        return res.status(500).send(message('gameguard', error.toString(), false));
+    } catch (error) {
+        return res.status(500).send(message('gameguard', (error as Error).toString(), false));
     }
 });
 
