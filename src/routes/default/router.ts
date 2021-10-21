@@ -4,13 +4,14 @@ const router = express.Router();
 
 import {Browser} from '../../wrapper/browser';
 import { message } from '../../helper/helper';
+import cache from '../../cache/cache';
 
 const browser = new Browser(false);
 
 /**
  * 
  */
-router.get('/default/statusgames', async (req, res) =>{
+router.get('/default/statusgames', cache(60), async (req, res) =>{
 
 
     try {
@@ -49,7 +50,7 @@ router.get('/default/statusgames', async (req, res) =>{
 });
 
 
-router.get('/default/gameguard', async (req, res) =>{
+router.get('/default/gameguard', cache(60), async (req, res) =>{
 
 
     try {

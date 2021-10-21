@@ -2,6 +2,6 @@
     "express_port": 3000,
     "rates": {
         "time": 60,
-        "requests": 2
+        "requests": 10
     }
 }
